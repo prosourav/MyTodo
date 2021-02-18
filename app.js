@@ -29,18 +29,23 @@ addBtn.addEventListener("click", function() {
     if(option==='delete'){  
       // event.target.parentNode.;
      event.target.parentNode.remove();
-     setTimeout( function(){ document.getElementById("lblsuccess").style.display = "none"; } ,3000);	
+          document.getElementById('messageS').innerText = `successfully deleted`;
+    document.getElementById('messageS').style.display = "block";
+     setTimeout(show,3000);
+   //   show();
 
     }
     if(option==='edit'){
     const editItem = event.target.parentNode.children[0].innerText;
-    event.target.parentNode.remove()
+   
    //  console.log(editItem);
      document.getElementById('add-text').value = editItem;
-   // event.target.parentNode.children[0].innerText = editItem;
+     event.target.parentNode.remove();
 
     }
  });
    
-      
+     const show = ()=>{
+        document.getElementById('messageS').style.display = "none"; 
+      }
    
